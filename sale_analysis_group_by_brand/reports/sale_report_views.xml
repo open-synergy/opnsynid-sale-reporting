@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 Opensynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="sale_report_view_search" model="ir.ui.view">
+    <field name="name">search sale.report - Group by Brand</field>
+    <field name="model">sale.report</field>
+    <field name="inherit_id" ref="sale.view_order_product_search"/>
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//filter[@name='Category']" position="after">
+                <filter name="grp_brand" string="Brand" context="{'group_by':'brand_id'}"/>
+            </xpath>
+        </data>
+    </field>
+</record>
+
+</data>
+</openerp>
